@@ -107,7 +107,7 @@ export const Footer = () => {
               </motion.div>
               <span>&</span>
               <Zap className='w-4 h-4 text-primary' />
-              <span>by Pola © {new Date().getFullYear()}</span>
+              <span>by Polas © {new Date().getFullYear()}</span>
             </div>
 
             {/* Version */}
