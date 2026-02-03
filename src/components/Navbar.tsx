@@ -124,7 +124,7 @@ export const Navbar = () => {
             <span>+ K</span>
           </div>
           <a
-            href='https://github.com/onlineservice24/resume/releases/download/resume/curriculum.vitae.pdf'
+            href='https://github.com/onlineservice24/resume/releases/download/resume_v2/Polas_Chandra_Barmon_Full_Stack_Developer_Resume.pdf'
             download
           >
             <Button className='gap-2 bg-gradient-primary font-display font-bold text-primary-foreground glow-neon hoverable'>
@@ -177,7 +177,7 @@ export const Navbar = () => {
                 </motion.a>
               ))}
               <a
-                href='https://github.com/onlineservice24/resume/releases/download/resume/curriculum.vitae.pdf'
+                href='https://github.com/onlineservice24/resume/releases/download/resume_v2/Polas_Chandra_Barmon_Full_Stack_Developer_Resume.pdf'
                 download
               >
                 <Button className='gap-2 bg-gradient-primary mt-4 font-display font-bold text-primary-foreground glow-neon'>
