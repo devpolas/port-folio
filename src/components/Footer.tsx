@@ -13,72 +13,81 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="py-16 border-t border-border relative overflow-hidden">
+    <footer className='relative py-16 border-border border-t overflow-hidden'>
       {/* Background */}
-      <div className="absolute inset-0 grid-pattern opacity-50" />
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-primary/5 rounded-full blur-[100px]" />
+      <div className='absolute inset-0 grid-pattern opacity-50' />
+      <div className='bottom-0 left-1/2 absolute bg-primary/5 blur-[100px] rounded-full w-[600px] h-[200px] -translate-x-1/2' />
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-6xl mx-auto">
+      <div className='z-10 relative mx-auto px-4 container'>
+        <div className='mx-auto max-w-6xl'>
           {/* Main Footer Content */}
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className='gap-8 grid md:grid-cols-3 mb-12'>
             {/* Logo & Tagline */}
-            <div className="space-y-4">
+            <div className='space-y-4'>
               <motion.a
-                href="#home"
+                href='#home'
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToTop();
                 }}
-                className="flex items-center gap-3 group hoverable"
+                className='group flex items-center gap-3 hoverable'
                 whileHover={{ scale: 1.02 }}
               >
-                <div className="relative">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center glow-neon">
-                    <Terminal className="w-6 h-6 text-primary-foreground" />
+                <div className='relative'>
+                  <div className='flex justify-center items-center bg-gradient-primary rounded-lg w-12 h-12 glow-neon'>
+                    <Terminal className='w-6 h-6 text-primary-foreground' />
                   </div>
                 </div>
                 <div>
-                  <span className="text-xl font-display font-bold text-gradient">POLA</span>
-                  <p className="text-xs font-mono text-muted-foreground">&lt;Full Stack Developer /&gt;</p>
+                  <span className='font-display font-bold text-gradient text-xl'>
+                    POLAS
+                  </span>
+                  <p className='font-mono text-muted-foreground text-xs'>
+                    &lt;Full Stack Developer /&gt;
+                  </p>
                 </div>
               </motion.a>
-              
-              <p className="text-sm text-muted-foreground font-body max-w-xs">
-                Crafting digital experiences with code, creativity, and a passion for innovation.
+
+              <p className='max-w-xs font-body text-muted-foreground text-sm'>
+                Crafting digital experiences with code, creativity, and a
+                passion for innovation.
               </p>
             </div>
 
             {/* Quick Links */}
-            <div className="space-y-4">
-              <h4 className="font-display font-bold text-sm uppercase tracking-wider text-primary">
+            <div className='space-y-4'>
+              <h4 className='font-display font-bold text-primary text-sm uppercase tracking-wider'>
                 Quick Links
               </h4>
-              <div className="grid grid-cols-2 gap-2">
-                {["Home", "About", "Skills", "Projects", "Contact"].map((link) => (
-                  <motion.a
-                    key={link}
-                    href={`#${link.toLowerCase()}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.getElementById(link.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
-                    }}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors font-mono link-cyber hoverable"
-                    whileHover={{ x: 4 }}
-                  >
-                    {link}
-                  </motion.a>
-                ))}
+              <div className='gap-2 grid grid-cols-2'>
+                {["Home", "About", "Skills", "Projects", "Contact"].map(
+                  (link) => (
+                    <motion.a
+                      key={link}
+                      href={`#${link.toLowerCase()}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        document
+                          .getElementById(link.toLowerCase())
+                          ?.scrollIntoView({ behavior: "smooth" });
+                      }}
+                      className='font-mono text-muted-foreground hover:text-primary text-sm transition-colors link-cyber hoverable'
+                      whileHover={{ x: 4 }}
+                    >
+                      {link}
+                    </motion.a>
+                  ),
+                )}
               </div>
             </div>
 
             {/* Code Snippet */}
-            <div className="space-y-4">
-              <h4 className="font-display font-bold text-sm uppercase tracking-wider text-primary">
+            <div className='space-y-4'>
+              <h4 className='font-display font-bold text-primary text-sm uppercase tracking-wider'>
                 Status
               </h4>
-              <div className="card-cyber p-4">
-                <pre className="text-xs font-mono text-muted-foreground whitespace-pre-wrap">
+              <div className='p-4 card-cyber'>
+                <pre className='font-mono text-muted-foreground text-xs whitespace-pre-wrap'>
                   {codeSnippet}
                 </pre>
               </div>
@@ -86,36 +95,36 @@ export const Footer = () => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className='flex md:flex-row flex-col justify-between items-center gap-4 pt-8 border-border border-t'>
             {/* Copyright */}
-            <div className="flex items-center gap-2 text-sm text-muted-foreground font-mono">
+            <div className='flex items-center gap-2 font-mono text-muted-foreground text-sm'>
               <span>Built with</span>
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1, repeat: Infinity }}
               >
-                <Heart className="w-4 h-4 text-destructive fill-destructive" />
+                <Heart className='fill-destructive w-4 h-4 text-destructive' />
               </motion.div>
               <span>&</span>
-              <Zap className="w-4 h-4 text-primary" />
+              <Zap className='w-4 h-4 text-primary' />
               <span>by Pola © {new Date().getFullYear()}</span>
             </div>
 
             {/* Version */}
-            <div className="flex items-center gap-4">
-              <span className="text-xs font-mono text-muted-foreground px-3 py-1 rounded bg-secondary">
+            <div className='flex items-center gap-4'>
+              <span className='bg-secondary px-3 py-1 rounded font-mono text-muted-foreground text-xs'>
                 v1.0.0
               </span>
-              
+
               {/* Scroll to Top */}
               <motion.button
                 onClick={scrollToTop}
                 whileHover={{ y: -4, scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-3 rounded-lg glass glow-neon hoverable"
-                aria-label="Scroll to top"
+                className='p-3 rounded-lg glass glow-neon hoverable'
+                aria-label='Scroll to top'
               >
-                <ArrowUp className="w-5 h-5 text-primary" />
+                <ArrowUp className='w-5 h-5 text-primary' />
               </motion.button>
             </div>
           </div>
